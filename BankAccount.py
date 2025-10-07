@@ -27,7 +27,7 @@ class BankAccount:
         self.interest_rate = 0.05
     
     def deposit(self, amount):
-        if amount > 0
+        if amount > 0:
             self.balance += amount
             self.transaction_history.append(f"Deposit: ${amount}")
             return True
@@ -45,7 +45,7 @@ class BankAccount:
             return False
     
     def calculate_interest(self):
-        interest = self.balanse * self.interest_rate
+        interest = self.balance * self.interest_rate
         self.balance += interest
         self.transaction_history.append(f"Interest earned: ${interest:.2f}")
         return interest
@@ -55,7 +55,7 @@ class BankAccount:
     
     def display_transactions(self):
         print(f"\n=== Transaction History for {self.account_holder} ===")
-       for transaction in self.transaction_history:
+        for transaction in self.transaction_history:
             print(transaction)
     
     def transfer(self, other_account, amount):
@@ -66,7 +66,7 @@ class BankAccount:
         return False
 
 
-def calculate_total_balance(accounts:
+def calculate_total_balance(accounts):
     total = 0
     for account in accounts:
         total += account.balance
