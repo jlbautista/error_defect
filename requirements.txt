@@ -1,0 +1,13 @@
+# Dependencias para el proyecto del sistema bancario
+
+# Framework de testing
+pytest>=7.0.0
+
+# Plugin para generar reportes de cobertura
+pytest-cov>=4.0.0
+
+# Plugin para ejecutar pruebas en paralelo (opcional)
+pytest-xdist>=3.0.0
+
+# Plugin para generar reportes HTML bonitos (opcional)
+pytest-html>=3.1.0
