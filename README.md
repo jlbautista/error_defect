@@ -1,124 +1,124 @@
-# Sistema Bancario - Testing
+# Banking System - Testing
 
-Este proyecto contiene un sistema bancario simple con pruebas profesionales usando pytest.
+This project contains a simple banking system with professional tests using pytest.
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
-├── BankAccount.py          # Código principal del sistema bancario
+├── BankAccount.py          # Main banking system code
 ├── test/
-│   └── test_bank_account.py # Suite completa de pruebas
-├── requirements.txt        # Dependencias del proyecto
-├── pytest.ini            # Configuración de pytest
-└── README.md             # Este archivo
+│   └── test_bank_account.py # Complete test suite
+├── requirements.txt        # Project dependencies
+├── pytest.ini              # Pytest configuration
+└── README.md               # This file
 ```
 
-## Instalación
+## Installation
 
-1. **Instalar las dependencias:**
+1. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-## Ejecución de Pruebas
+## Running Tests
 
-### Comandos Básicos
+### Basic Commands
 
 ```bash
-# Ejecutar todas las pruebas
+# Run all tests
 pytest
 
-# Ejecutar con output más detallado
+# Run with more detailed output
 pytest -v
 
-# Ejecutar una clase específica de pruebas
+# Run a specific test class
 pytest test/test_bank_account.py::TestBankAccount
 
-# Ejecutar un método específico
+# Run a specific test method
 pytest test/test_bank_account.py::TestBankAccount::test_successful_deposit
 ```
 
-### Reportes de Cobertura
+### Coverage Reports
 
 ```bash
-# Generar reporte de cobertura en terminal
+# Generate coverage report in terminal
 pytest --cov=BankAccount
 
-# Generar reporte de cobertura en HTML
+# Generate HTML coverage report
 pytest --cov=BankAccount --cov-report=html
 
-# Ver el reporte HTML (se crea en htmlcov/index.html)
+# View the HTML report (created at htmlcov/index.html)
 open htmlcov/index.html
 ```
 
-### Reportes HTML
+### HTML Reports
 
 ```bash
-# Generar reporte HTML de las pruebas
+# Generate HTML test report
 pytest --html=report.html --self-contained-html
 ```
 
-### Ejecución en Paralelo
+### Parallel Execution
 
 ```bash
-# Ejecutar pruebas en paralelo (más rápido para suites grandes)
+# Run tests in parallel (faster for large suites)
 pytest -n auto
 ```
 
-## Tipos de Pruebas Incluidas
+## Types of Tests Included
 
-### 1. **Pruebas Unitarias** (`TestBankAccount`)
-- Inicialización de cuentas
-- Depósitos válidos e inválidos
-- Retiros válidos e inválidos
-- Cálculo de intereses
-- Transferencias entre cuentas
-- Historial de transacciones
+### 1. **Unit Tests** (`TestBankAccount`)
+- Account initialization
+- Valid and invalid deposits
+- Valid and invalid withdrawals
+- Interest calculation
+- Transfers between accounts
+- Transaction history
 
-### 2. **Pruebas de Funciones Auxiliares** (`TestUtilityFunctions`)
-- Cálculo de balance total
-- Búsqueda de cuentas con balance alto
-- Manejo de casos edge (listas vacías, sin coincidencias)
+### 2. **Helper Function Tests** (`TestUtilityFunctions`)
+- Total balance calculation
+- Find accounts with high balance
+- Handling edge cases (empty lists, no matches)
 
-### 3. **Pruebas de Integración** (`TestIntegrationScenarios`)
-- Escenarios completos de operaciones bancarias
-- Múltiples transferencias entre cuentas
-- Verificación de consistencia de datos
+### 3. **Integration Tests** (`TestIntegrationScenarios`)
+- Complete banking operation scenarios
+- Multiple transfers between accounts
+- Data consistency verification
 
-## Características de las Pruebas
+## Test Features
 
-- **Fixtures**: Reutilización de datos de prueba
-- **Parametrización**: Pruebas con múltiples datos de entrada
-- **Assertions claras**: Verificaciones específicas y descriptivas
-- **Cobertura completa**: Pruebas para casos normales y edge cases
-- **Documentación**: Cada prueba está documentada con su propósito
+- **Fixtures**: Reusable test data
+- **Parametrization**: Tests with multiple input data
+- **Clear assertions**: Specific and descriptive checks
+- **Full coverage**: Tests for normal and edge cases
+- **Documentation**: Each test is documented with its purpose
 
-## Comandos Útiles para Desarrollo
+## Useful Development Commands
 
 ```bash
-# Ejecutar solo las pruebas que fallaron en la última ejecución
+# Run only tests that failed in the last run
 pytest --lf
 
-# Ejecutar pruebas hasta que una falle
+# Stop after the first failure
 pytest -x
 
-# Ejecutar en modo watch (requiere pytest-watch)
+# Watch mode (requires pytest-watch)
 pytest-watch
 
-# Ejecutar con profiling para identificar pruebas lentas
+# Run with profiling to identify slow tests
 pytest --durations=10
 ```
 
-## Buenas Prácticas Implementadas
+## Best Practices Implemented
 
-1. **Separación clara**: Código de producción separado de las pruebas
-2. **Nomenclatura descriptiva**: Nombres de métodos que explican qué se prueba
-3. **Fixtures reutilizables**: Configuración compartida entre pruebas
-4. **Assertions específicas**: Verificaciones claras y precisas
-5. **Casos edge**: Pruebas para casos límite y errores
-6. **Documentación**: Cada clase y método está documentado
+1. **Clear separation**: Production code separated from tests
+2. **Descriptive naming**: Method names explain what is being tested
+3. **Reusable fixtures**: Shared setup between tests
+4. **Specific assertions**: Clear and precise checks
+5. **Edge cases**: Tests for limit and error cases
+6. **Documentation**: Each class and method is documented
 
-## Ejemplo de Salida
+## Example Output
 
 ```bash
 $ pytest -v
